@@ -1,9 +1,14 @@
-# api documentation for  [file-loader (v0.11.1)](https://github.com/webpack/file-loader)  [![npm package](https://img.shields.io/npm/v/npmdoc-file-loader.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-file-loader) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-file-loader.svg)](https://travis-ci.org/npmdoc/node-npmdoc-file-loader)
+# npmdoc-file-loader
+
+#### api documentation for  [file-loader (v0.11.1)](https://github.com/webpack/file-loader)  [![npm package](https://img.shields.io/npm/v/npmdoc-file-loader.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-file-loader) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-file-loader.svg)](https://travis-ci.org/npmdoc/node-npmdoc-file-loader)
+
 #### file loader module for webpack
 
-[![NPM](https://nodei.co/npm/file-loader.png?downloads=true)](https://www.npmjs.com/package/file-loader)
+[![NPM](https://nodei.co/npm/file-loader.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/file-loader)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-file-loader/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-file-loader_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-file-loader/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-file-loader/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-file-loader/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-file-loader/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-file-loader/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-file-loader/build/screenCapture.npmPackageListing.svg)
 
@@ -47,33 +52,26 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "bebraw",
-            "email": "bebraw@gmail.com"
+            "name": "bebraw"
         },
         {
-            "name": "d3viant0ne",
-            "email": "wiens.joshua@gmail.com"
+            "name": "d3viant0ne"
         },
         {
-            "name": "ericclemmons",
-            "email": "eric@smarterspam.com"
+            "name": "ericclemmons"
         },
         {
-            "name": "jhnns",
-            "email": "mail@johannesewald.de"
+            "name": "jhnns"
         },
         {
-            "name": "sokra",
-            "email": "tobias.koppers@googlemail.com"
+            "name": "sokra"
         },
         {
-            "name": "thelarkinn",
-            "email": "sean.larkin@cuw.edu"
+            "name": "thelarkinn"
         }
     ],
     "name": "file-loader",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/webpack/file-loader.git"
@@ -86,17 +84,6 @@
     "version": "0.11.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module file-loader](#apidoc.module.file-loader)
-1.  boolean <span class="apidocSignatureSpan">file-loader.</span>raw
-
-
-
-# <a name="apidoc.module.file-loader"></a>[module file-loader](#apidoc.module.file-loader)
 
 
 
