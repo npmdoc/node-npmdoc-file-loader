@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/webpack/file-loader"
-
-    >file-loader (v0.11.1)</a>
+    <a href="https://github.com/webpack/file-loader">file-loader (v0.11.1)</a>
 </h1>
 <h4>file loader module for webpack</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.file-loader">module file-loader</a><ol>
 
@@ -116,16 +109,16 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">file-loader = function (content) {
-	this.cacheable &#x26;&#x26; this.cacheable();
-	if(!this.emitFile) throw new Error(&#x22;emitFile is required from module system&#x22;);
+	this.cacheable &amp;&amp; this.cacheable();
+	if(!this.emitFile) throw new Error("emitFile is required from module system");
 
 	var query = loaderUtils.getOptions(this) || {};
-	var configKey = query.config || &#x22;fileLoader&#x22;;
+	var configKey = query.config || "fileLoader";
 	var options = this.options[configKey] || {};
 	var config = {
 		publicPath: false,
 		useRelativePath: false,
-		name: &#x22;[hash].[ext]&#x22;
+		name: "[hash].[ext]"
 	};
 
 	// options takes precedence over config
@@ -145,14 +138,14 @@
 		regExp: config.regExp
 	});
 
-	var outputPath = &#x22;&#x22;;
+	var outputPath = "";
 
 	var filePath = this.resourcePath;
 	if (config.useRelativePath) {
-		var issuerContext = this._module &#x26;&#x26; this._module.issuer &#x26;&#x26; this._module.issuer.context || context;
-		var relativeUrl = issuerContext &#x26;&#x26; path.relative(issuerContext, filePath).split(path.sep).join(&#x22;/&#x22;);
-		var relativePath = relativeUrl &#x26;&#x26; path.dirname(relativeUrl) + &#x22;/&#x22;;
-		if (~relativePath.indexOf(&#x22;../&#x22;)) {
+		var issuerContext = this._module &amp;&amp; this._module.issuer &amp;&amp; this._module.issuer.context || context;
+		var relativeUrl = issuerContext &amp;&amp; path.relative(issuerContext, filePath).split(path.sep).join("/");
+		var relativePath = relativeUrl &amp;&amp; path.dirname(relativeUrl) + "/";
+		if (~relativePath.indexOf("../")) {
 			outputPath = path.posix.join(outputPath, relativePath, url);
 		} else {
 			outputPath = relativePath + url;
@@ -161,7 +154,7 @@
 	} else if (config.outputPath) {
 		// support functions as outputPath to generate them dynamically
 		outputPath = (
-			typeof config.outputPath === &#x22;function&#x22;
+			typeof config.outputPath === "function"
 			? config.outputPath(url)
 			: config.outputPath + url
 		);
@@ -170,11 +163,11 @@
 		outputPath = url;
 	}
 
-	var publicPath = &#x22;__webpack_public_path__ + &#x22; + JSON.stringify(url);
+	var publicPath = "__webpack_public_path__ + " + JSON.stringify(url);
 	if (config.publicPath) {
 		// support functions as publicPath to generate them dynamically
 		publicPath = JSON.stringify(
-			typeof config.publicPath === &#x22;function&#x22;
+			typeof config.publicPath === "function"
 			? config.publicPath(url)
 			: config.publicPath + url
 		);
@@ -184,7 +177,7 @@
 		this.emitFile(outputPath, content);
 	}
 
-	return &#x22;module.exports = &#x22; + publicPath + &#x22;;&#x22;;
+	return "module.exports = " + publicPath + ";";
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -231,3 +224,4 @@
     ]
 </div>
 </div>
+</body></html>

@@ -67,6 +67,37 @@
 
         </li>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-loader.file-loader">
+            function <span class="apidocSignatureSpan"></span>file-loader
+            <span class="apidocSignatureSpan">(content)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-loader.toString">
+            function <span class="apidocSignatureSpan">file-loader.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.file-loader.toString">module file-loader.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-loader.toString.toString">
+            function <span class="apidocSignatureSpan">file-loader.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
@@ -74,6 +105,122 @@
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.file-loader" id="apidoc.module.file-loader">module file-loader</a></h1>
 
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-loader.file-loader" id="apidoc.element.file-loader.file-loader">
+        function <span class="apidocSignatureSpan"></span>file-loader
+        <span class="apidocSignatureSpan">(content)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file-loader = function (content) {
+	this.cacheable &#x26;&#x26; this.cacheable();
+	if(!this.emitFile) throw new Error(&#x22;emitFile is required from module system&#x22;);
+
+	var query = loaderUtils.getOptions(this) || {};
+	var configKey = query.config || &#x22;fileLoader&#x22;;
+	var options = this.options[configKey] || {};
+	var config = {
+		publicPath: false,
+		useRelativePath: false,
+		name: &#x22;[hash].[ext]&#x22;
+	};
+
+	// options takes precedence over config
+	Object.keys(options).forEach(function(attr) {
+		config[attr] = options[attr];
+	});
+
+	// query takes precedence over config and options
+	Object.keys(query).forEach(function(attr) {
+		config[attr] = query[attr];
+	});
+
+	var context = config.context || this.options.context;
+	var url = loaderUtils.interpolateName(this, config.name, {
+		context: context,
+		content: content,
+		regExp: config.regExp
+	});
+
+	var outputPath = &#x22;&#x22;;
+
+	var filePath = this.resourcePath;
+	if (config.useRelativePath) {
+		var issuerContext = this._module &#x26;&#x26; this._module.issuer &#x26;&#x26; this._module.issuer.context || context;
+		var relativeUrl = issuerContext &#x26;&#x26; path.relative(issuerContext, filePath).split(path.sep).join(&#x22;/&#x22;);
+		var relativePath = relativeUrl &#x26;&#x26; path.dirname(relativeUrl) + &#x22;/&#x22;;
+		if (~relativePath.indexOf(&#x22;../&#x22;)) {
+			outputPath = path.posix.join(outputPath, relativePath, url);
+		} else {
+			outputPath = relativePath + url;
+		}
+		url = relativePath + url;
+	} else if (config.outputPath) {
+		// support functions as outputPath to generate them dynamically
+		outputPath = (
+			typeof config.outputPath === &#x22;function&#x22;
+			? config.outputPath(url)
+			: config.outputPath + url
+		);
+		url = outputPath;
+	} else {
+		outputPath = url;
+	}
+
+	var publicPath = &#x22;__webpack_public_path__ + &#x22; + JSON.stringify(url);
+	if (config.publicPath) {
+		// support functions as publicPath to generate them dynamically
+		publicPath = JSON.stringify(
+			typeof config.publicPath === &#x22;function&#x22;
+			? config.publicPath(url)
+			: config.publicPath + url
+		);
+	}
+
+	if (query.emitFile === undefined || query.emitFile) {
+		this.emitFile(outputPath, content);
+	}
+
+	return &#x22;module.exports = &#x22; + publicPath + &#x22;;&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-loader.toString" id="apidoc.element.file-loader.toString">
+        function <span class="apidocSignatureSpan">file-loader.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.file-loader.toString" id="apidoc.module.file-loader.toString">module file-loader.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.file-loader.toString.toString" id="apidoc.element.file-loader.toString.toString">
+        function <span class="apidocSignatureSpan">file-loader.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
 
 </div>
