@@ -1,6 +1,6 @@
 # npmdoc-file-loader
 
-#### api documentation for  [file-loader (v0.11.1)](https://github.com/webpack/file-loader)  [![npm package](https://img.shields.io/npm/v/npmdoc-file-loader.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-file-loader) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-file-loader.svg)](https://travis-ci.org/npmdoc/node-npmdoc-file-loader)
+#### basic api documentation for  [file-loader (v0.11.1)](https://github.com/webpack/file-loader)  [![npm package](https://img.shields.io/npm/v/npmdoc-file-loader.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-file-loader) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-file-loader.svg)](https://travis-ci.org/npmdoc/node-npmdoc-file-loader)
 
 #### file loader module for webpack
 
@@ -81,7 +81,8 @@
         "test": "mocha -R spec",
         "travis:test": "npm run test"
     },
-    "version": "0.11.1"
+    "version": "0.11.1",
+    "bin": {}
 }
 ```
 
